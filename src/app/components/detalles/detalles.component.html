@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+        <img src="http://www.pokemongobrasil.com/wp-content/uploads/2016/08/Ultra_Ball.png" alt="" class="img-fluid">
+</div>
+
+<div class="row m-2">
+                    <div class="col"></div>
+                    <div class="col">
+                    <div class="card m-5" style="width: 1000px; height: 500px; border-style: solid; border-color: black">
+                        <div class="row mt-5 mb-2 justify-content-center">
+                        <div class="card-title">
+                            <h3 style="font-weight: bold">Nombre: {{pokemon.name}}</h3>
+                        </div>
+                        </div>
+                        <div class="row m-3">
+                        <div class="card-body">
+                                <div class="row m-1">
+                                    <h5 style="text-align:justify">Descripcción: {{pokemon.description}} </h5>
+                                </div>
+                                <div class="row m-1">
+                                    <h5>Tipo(s): {{pokemon.types}}</h5>
+                                </div>
+                                
+                                <!--ngIf-->
+                                <div *ngIf="pokemon.evolutions.length>0">
+                                    <div class="row m-3">
+                                    <h3 style="font-weight: bold">Evolución</h3>
+                                    </div>
+                                    <!--ngFor-->
+                                    <div *ngFor="let item of pokemon.evolutions">
+            
+                                        <div class="row m-1">
+                                            <div class="col">
+                                                <h5 class="m-4" >Nombre: {{item.to}}</h5>
+                                            </div>
+                                            <div class="col">
+                                                
+                                
+                                                    <img src="{{getImg(item.to)}}" style="width:100px; height: 100px">
+                                                
+                                                
+                                             </div>
+                                             <div class="col">
+                                                    <h5 class="m-4">Nivel: {{item.level}}</h5>
+                                            </div>
+                                            <div class="col">
+                                                    <h5 class="m-4">Método: {{item.method}}</h5>
+                                            </div>
+                                        </div>
+                            
+                                        
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="row m-3 justify-content-end">
+                            <button style="padding:5px" (click)=irInicio()>Regresar</button>
+                    </div>
+                    
+                    </div>
+                    </div>
+                    <div class="col"></div>
+  
+
+</div>
